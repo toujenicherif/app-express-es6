@@ -12,9 +12,6 @@ const UserSchema = new mongoose.Schema({
         , password: String
         , roles: []
     }
-    , {
-        timestamps: true
-    }
 );
 
 /**
@@ -65,3 +62,5 @@ exports.addUser = ({firstName, lastName, email, password, phone, role}) => {
         });
     });
 };
+
+

@@ -6,7 +6,7 @@
 import app from '../app';
 import debug from 'debug';
 import http from 'http';
-
+import mongoose from 'mongoose';
 /**
  * Get port from environment and store in Express.
  */
@@ -19,6 +19,9 @@ app.set('port', port);
  */
 
 let server = http.createServer(app);
+
+mongoose.connect('mongodb://127.0.0.1:27017/itbs', { useMongoClient: true });
+mongoose.Promise = global.Promise;
 
 /**
  * Listen on provided port, on all network interfaces.
